@@ -25,18 +25,18 @@ public class Fahrzeug {
     }
 
     void tanke(double liter){
-        //Erhöht den tankstand, darf aber das tankvolumen nicht überschreiten.
         double gesamt = tankstand + liter;
+        
         if (gesamt > tankvolumen){
             System.out.printf("Vollgetankt, jedoch gingen %d liter daneben", gesamt - tankvolumen);
             tankstand = tankvolumen;
             return;
         }
+
         tankstand += liter;
     }
 
     void fahre(double km){
-        // Erhöht den kmStand. Falls das Fahrzeug kein Kraftstoff mehr hat, soll eine Fehlermeldung ausgegeben werden.
         double maxStrecke = wieWeitKannIchGenauFahren();
         double strecke = maxStrecke <= km ? maxStrecke : km;
 
