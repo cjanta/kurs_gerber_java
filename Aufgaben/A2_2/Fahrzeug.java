@@ -11,7 +11,7 @@ public class Fahrzeug {
     private double tankvolumen;
     private double tankstand;
 
-    private final double VERBRAUCH_LITER_PRO_KM = 0.05;  // Fahrzeug braucht 5 l / 100 km.
+    private final double VERBRAUCH_LITER_PRO_KM = 0.05; 
 
     public Fahrzeug(String marke, String modell, int baujahr, double kmStand, String kraftstoffart,
             double tankvolumen) {
@@ -26,7 +26,7 @@ public class Fahrzeug {
 
     void tanke(double liter){
         double gesamt = tankstand + liter;
-        
+
         if (gesamt > tankvolumen){
             System.out.printf("Vollgetankt, jedoch gingen %d liter daneben", gesamt - tankvolumen);
             tankstand = tankvolumen;
@@ -65,7 +65,6 @@ public class Fahrzeug {
     }
 
     void zeigeDetails(){
-        //  Gibt alle Fahrzeugdaten auf der Konsole aus.
         StringBuffer sb = new StringBuffer();
         sb.append("Fahzeug\n");
         sb.append("Marke: " + marke + "\n");
