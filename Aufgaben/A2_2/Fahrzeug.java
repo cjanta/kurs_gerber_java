@@ -74,6 +74,7 @@ public class Fahrzeug {
         sb.append("Kraftstoffart: " + kraftstoffart + "\n");
         sb.append("Tankvolumen: " + tankvolumen + "\n");
         sb.append("Tankstand: " + tankstand + "\n");
+        sb.append("Verbrauch pro 100km: " + VERBRAUCH_LITER_PRO_KM * 100 + "\n");
         sb.append("Reichweite gem. Tankstand: " + wieWeitKannIchGenauFahren() + " km\n\n");
         System.out.println(sb.toString());
     }
