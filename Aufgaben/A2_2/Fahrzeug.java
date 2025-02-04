@@ -42,16 +42,17 @@ public class Fahrzeug {
 
         kmStand += strecke;
         tankstand = strecke == maxStrecke ? 0 : tankstand - (strecke * VERBRAUCH_LITER_PRO_KM);
+
         try {
             checkTankstand();
-        } catch (Exception e) {
-            System.out.println("" + strecke + " km gefahren und der Kraftstoff ist leer!");
+        } catch (TankIstLeerException tile) {
+            System.out.println(tile.getMessage());
         }
     }
 
-    private void checkTankstand() {
+    private void checkTankstand() throws TankIstLeerException {
         if (tankstand  <= 0){
-            throw new UnsupportedOperationException("Der Kraftstoff ist leer. kmStand: " + kmStand);
+            throw new TankIstLeerException(kmStand);
         }
     }
 
