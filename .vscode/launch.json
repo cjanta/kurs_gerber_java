@@ -4,6 +4,13 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "mainClass": "Aufgaben.A3_1.App",
+            "projectName": "kurs_gerber_java_42ffaed0"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "mainClass": "Aufgaben.A2_2.App",
             "projectName": "kurs_gerber_java_5b9a3589"
         },
