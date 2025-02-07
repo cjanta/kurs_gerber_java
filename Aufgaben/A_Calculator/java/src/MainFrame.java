@@ -1,17 +1,16 @@
 package Aufgaben.A_Calculator.java.src;
 
-
+import java.awt.Color;
 import java.awt.Dimension;
-import java.util.List;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class MainFrame extends JFrame  {
 
-    private JLabel outputLabel;
+    private JTextField outputLabel;
 
     public MainFrame(){
         setTitle("Taschenrechner (IHK-konform)");
@@ -20,17 +19,16 @@ public class MainFrame extends JFrame  {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
-        outputLabel = new JLabel();
+        outputLabel = new JTextField();
         outputLabel.setText(" ");
+        outputLabel.setBackground(new Color(223,197,123));
         outputLabel.setSize(new Dimension(100, 33));
 
         mainPanel.add(outputLabel);
 
         PanelRowsFactory fac = new PanelRowsFactory(outputLabel);
-        List<JPanel> rowPanels = fac.getRowPanels();
-        rowPanels.forEach(mainPanel::add);
+        fac.getRowPanels().forEach(mainPanel::add);
        
-
         add(mainPanel);
         pack();
         setVisible(true);

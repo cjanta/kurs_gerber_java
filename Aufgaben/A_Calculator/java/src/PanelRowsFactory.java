@@ -5,17 +5,17 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 public class PanelRowsFactory {
 
     private HashMap<String, List<String>> shemas;
     private final int ROWS_LENGTH = 4;
-    private JLabel outLabel;
+    private JTextField outLabel;
 
-    public PanelRowsFactory(JLabel outLabel){
+    public PanelRowsFactory(JTextField outLabel){
 
         this.outLabel = outLabel;
         shemas = new HashMap<String, List<String>>();
@@ -53,7 +53,21 @@ public class PanelRowsFactory {
     }
 
     private BaseButton createBaseButton(String value){
-        return new NumberButton(outLabel, value);
+        if (BaseButton.NUMBER_STRINGS.contains(value)){
+            return new NumberButton(outLabel, value);
+        }
+        else if(BaseButton.OPERATOR_STRINGS.contains(value)){
+            return new OperatorButton(outLabel, value);
+        }
+        else if(BaseButton.CLEAR.equals(value)){
+            return new ClearButton(outLabel, value);
+        }
+        else if(BaseButton.CALCULATE.equals(value)){
+            return new CalculateButton(outLabel, value);
+        }
+        else{
+            throw new RuntimeException("create Base Button, type not found: " + toString());
+        }
     }
 
 

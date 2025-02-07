@@ -1,24 +1,27 @@
 package Aufgaben.A_Calculator.java.src;
 
 import java.awt.event.ActionEvent;
-
-import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class NumberButton extends BaseButton {
 
-    String value;
+    String text;
 
-    public NumberButton(JLabel outLabel , String value) {
+    public NumberButton(JTextField outLabel , String text) {
         super(outLabel);
-        this.value = value;
-        setText(value);
+        this.text = text;
+        setText(text);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        // wird nicht aufgerufen
-        // outLabel.setText(outLabel.getText() + " " + value);
-        outLabel.setText(value);
-        System.out.println("Action");
+        String currentText = outLabel.getText();
+
+        String delimeter = isNumber(currentText.substring(currentText.length() - 1)) ? "" : " ";
+        outLabel.setText(currentText + delimeter + text);
+    }
+
+    private boolean isNumber(String value){
+        return NUMBER_STRINGS.contains(value);
     }
 }

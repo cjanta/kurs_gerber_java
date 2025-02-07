@@ -1,17 +1,16 @@
 package Aufgaben.A_Calculator.java.src;
 
 import java.awt.event.ActionEvent;
-
-import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class OperatorButton extends BaseButton {
 
     String operator;
 
-    public OperatorButton(JLabel outLabel, String operator) {
+    public OperatorButton(JTextField outLabel, String operator) {
         super(outLabel);
         this.operator = operator;
-
+        setText(operator);
     }
     
     @Override
