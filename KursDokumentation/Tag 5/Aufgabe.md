@@ -1,0 +1,3 @@
+- passe den Taschenrechner2 so an, dass die Tasten unterschiedliche Farben haben (bitte für jede Tastenart eine eigene Farbe und damit eigene Klasse)
+- Ergänze den Fehlerfall (Exception) mit einer Textmessage, die in der Klasse Taschenrechneranzeige einen Fehlertext (in rot) darstelle. Dieser Text verschwindet, wenn weitere Eingaben erfolgen 
+- 
