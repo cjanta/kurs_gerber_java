@@ -4,6 +4,13 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "mainClass": "calc01.App",
+            "projectName": "Calculator"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "mainClass": "Aufgaben.A_Calculator.java.src.App",
             "projectName": "kurs_gerber_java_42ffaed0"
         },
