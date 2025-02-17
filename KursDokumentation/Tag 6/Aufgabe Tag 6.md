@@ -1,0 +1,2 @@
+- erstelle mit JFormDesigner ein Eingabe - JForm für die Abfrage von benutzernamen und Passwort. Die Felder sollen jeweils mit einem Attribut eines Models verbunden werden. Mit dem Button Login wird dann in der View (die Anbindung an den Controller werden wir mogen machen) der Username und Passwort verglichen und dann im Model durch ein weiteres Feld das Ergebnis in der View angezeigt. 
+-
